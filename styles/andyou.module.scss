@@ -1,0 +1,43 @@
+@use "mixins" as *;
+
+.andyouCover {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+
+  & div {
+    display: block !important;
+  }
+
+  @include ltr {
+    margin-left: 100px;
+  }
+
+  @include rtl {
+    margin-right: 100px;
+  }
+
+  @media (min-width: 1536px) {
+    width: 40vw;
+
+    @include ltr {
+      margin-left: 5vw;
+    }
+
+    @include rtl {
+      margin-right: 5vw;
+    }
+  }
+}
+
+.image {
+  @media (min-width: 426px) {
+    margin-top: 150px;
+  }  
+  @media (min-width: 769px) {
+    margin-top: 250px;
+  }
+  @media (min-width: 1025px) {
+    margin-top: 350px;
+  }
+}

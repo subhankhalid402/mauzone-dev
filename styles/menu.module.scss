@@ -1,0 +1,289 @@
+@use "mixins" as *;
+
+.sidenav {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 430px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  overflow-y: scroll;
+  padding-bottom: 25px;
+
+  &::-webkit-scrollbar {
+    width: 0;
+}
+
+  @include ltr {
+    left: 0;
+    padding-left: 60px;
+  }
+
+  @include rtl {
+    right: 0;
+    padding-right: 60px;
+  }
+
+  @media (max-width: 1240px) {
+    width: 230px;
+
+    @include ltr {
+      padding-left: 30px;
+    }
+  
+    @include rtl {
+      padding-right: 30px;
+    }
+
+  @media (max-width: 767px) {
+      width: 0;
+      
+      @include ltr {
+        padding-left: 0;
+      }
+    
+      @include rtl {
+        padding-right: 0;
+      }
+  }
+  }
+
+  & .menu {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.open{
+  background-color: white;
+  padding-top: 150px;
+  padding-left: 45px;
+  
+  @media (max-width: 767px) {
+    width: 100%;
+    
+    @include ltr {
+      padding-left: 45px;
+    }
+  
+    @include rtl {
+      padding-right: 45px;
+    }
+}
+}
+
+.tiltedSquare {
+  position: absolute;
+  width: 40px;
+  z-index: -1;
+  transform: scaleX(-1);
+
+  @include ltr {
+    margin-left: -10px;
+  }
+
+  @include rtl {
+    margin-right: -10px;
+  }
+}
+
+.itemTitle {
+  position: relative;
+
+  & p {
+    display: inline;
+  }
+
+  & .tiltedSquare {
+    position: absolute;
+    width: 40px;
+    z-index: -1;
+    transform: scaleX(-1);
+
+    @include ltr {
+      margin-left: -30px;
+    }
+
+    @include rtl {
+      margin-right: -30px;
+    }
+  }
+}
+
+.logo {
+  margin-bottom: 30px;
+  cursor: pointer;
+  height: 150px;
+  width: 175px;
+
+  @include ltr {
+    margin-left: -25px !important;
+  }
+
+  @include rtl {
+    margin-right: -25px !important;
+  }
+}
+
+.motionLogo {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  height: 150px;
+  width: 175px;
+  position:absolute;
+
+  @include ltr {
+    margin-left: 35px !important;
+  }
+
+  @include rtl {
+    margin-right: 35px !important;
+  }
+
+  @media (max-width: 1240px) {
+
+    @include ltr {
+    margin-left: 5px !important;
+    }
+  
+    @include rtl {
+    margin-right: 5px !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.motionLogoBGui {
+  margin-top: -10px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  height: 170px;
+  width: 220px;
+  position:fixed;
+  z-index: 2;
+
+  @include ltr {
+    margin-left: -35px !important;
+  }
+
+  @include rtl {
+    margin-right: -35px !important;
+  }
+
+  @media (max-width: 1240px) {
+
+    @include ltr {
+    margin-left: -15px !important;
+    }
+  
+    @include rtl {
+    margin-right: -15px !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.navLink {
+  & p {
+    font-size: 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  & .otherLocaleLink{
+    min-height: 19px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  & .otherLocaleLink p {
+    font-size: 15px;
+  }
+}
+
+.complementaryInfo {
+  & .bottomNavIcons {
+    display: flex;
+    align-items: stretch;
+  }
+
+  & p {
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
+}
+
+.languageSwitch {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 35px;
+
+  & p {
+    font-size: 18px !important;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .languageSwitch {
+    display: none;
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 70px;
+  height: 30px;
+
+  & input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  & .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 34px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  & .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 5px;
+    bottom: 3px;
+    background-color: black;
+    border-radius: 50%;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  & input:checked + .slider:before {
+    -webkit-transform: translateX(35px);
+    -ms-transform: translateX(35px);
+    transform: translateX(35px);
+  }
+}

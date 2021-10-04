@@ -70,7 +70,7 @@ export const ar = {
     "contentWriting.title": "كتابة المحتوى المهني",
     "contentWriting.clients.1": "<Link href='/mauj'>موج</Link>",
     "contentWriting.clients.2": "شفرة",
-    "contentWriting.clients.3": "موسى آند بالم",
+    "contentWriting.clients.3": "<Link href='/musaandpalm'>موسى آند بالم</Link>",
     "contentWriting.clients.4": "الهيئة السعودية للسياحة",
     "contentWriting.clients.5": "وزارة الثقافة: جدة التاريخية",
     "creativeWriting.title": "الكتابة الإبداعية",

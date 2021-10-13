@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps }) {
     instantlyVisible: { opacity: 1, transition: { duration: 0 } },
     hidden: { opacity: 1, transition: { delay: 0 } },
   };
-  
+
   const defaultPageTransition = {
     initial: 'hidden',
     animate: "visible",
@@ -65,6 +65,7 @@ function MyApp({ Component, pageProps }) {
   const handleBgColorChange = (color) => setCurrentPageColor(color)
 
   return (
+
     <IntlProvider
       locale={locale}
       defaultLocale={defaultLocale}
@@ -75,17 +76,17 @@ function MyApp({ Component, pageProps }) {
             dir={pathname !== "/" && locale === "ar" ? "rtl" : "ltr"}
             className={"locale " + locale}
           >
-              <HeaderMobile 
-                  backgroundColor = {currentPageColor} 
-                  isNavOpen = {isNavOpen} 
+              <HeaderMobile
+                  backgroundColor = {currentPageColor}
+                  isNavOpen = {isNavOpen}
                   handleOpenNav = {handleOpenNav}
-              /> 
+              />
               <Component
                 updatePageTransition={()=>{}}
                 textAnimationControls={textAnimationControls}
                 handleBgColorChange = {handleBgColorChange}
                 handleOpenNav = {handleOpenNav}
-                isNavOpen = {isNavOpen} 
+                isNavOpen = {isNavOpen}
                 key={pathname}
                 history = {history}
                 initial={defaultPageTransition.initial}
@@ -94,6 +95,7 @@ function MyApp({ Component, pageProps }) {
                 screenWidth = {width}
                 {...pageProps}
               />
+
           </div>
         </AnimateSharedLayout>
     </IntlProvider>

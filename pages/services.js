@@ -174,6 +174,7 @@ export default function services({ textAnimationControls, handleBgColorChange,ha
                             {f("contentWriting.services.header")}
                             <br />
                             {[
+                              "contentWriting.services.mm",
                               "contentWriting.services.naming",
                               "contentWriting.services.manifesto",
                               "contentWriting.services.slogans",
@@ -253,20 +254,27 @@ export default function services({ textAnimationControls, handleBgColorChange,ha
                   </div>
               </div>
 
-              <div style={{ height: "400px" }} />
-              <div className="container-image">
-                <div className={styles.servicesCover}>
-                  <motion.img
-                    src="/Services.png"
-                    height="437px"
-                    width="400px"
-                    layout="fixed"
-                    priority="true"
-                    style={router.locale === "ar" ? { transform: "scaleX(-1)" } : {}}
-                    transition={{ duration: 0.5 }}
-                  />
+              <div style={{ height: "100px" }} />
+              {/*<div className="container-image">*/}
+              {/*  <div className={styles.servicesCover}>*/}
+              {/*    <motion.img*/}
+              {/*      src="/Service.png"*/}
+              {/*      height="437px"*/}
+              {/*      width="400px"*/}
+              {/*      layout="fixed"*/}
+              {/*      priority="true"*/}
+              {/*      style={router.locale === "ar" ? { transform: "scaleX(-1)" } : {}}*/}
+              {/*      transition={{ duration: 0.5 }}*/}
+              {/*    />*/}
+              {/*  </div>*/}
+              {/*</div>*/}
+
+                <div className="container-image">
+                    <div className={styles.storyCover}>
+                        <motion.img src="/Service.png" height="341px" width="900px" layout="fixed"
+                                    priority="true" transition={{duration: 0.5}}/>
+                    </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>

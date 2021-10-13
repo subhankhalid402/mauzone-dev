@@ -1,1 +1,14 @@
 @use "mixins" as *;
+
+
+.homeText {
+  p {
+    font-size: 25px;
+    font-weight: normal !important;
+
+    span span {
+      font-size: 30px;
+      font-weight: bold;
+    }
+  }
+}

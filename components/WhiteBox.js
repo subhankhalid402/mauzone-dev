@@ -10,10 +10,10 @@ export default function WhiteBox({ children, style, decoratorsPositions }) {
   const buildTiltedSquare = (options, name, index) => {
 
     const parseNumber = (num) => {
-      const parsedNumber = num ? Number.parseInt(num) : 0
+      const parsedNumber = num ? Number.parseInt(num) : 0;
       return parsedNumber === 0 ? null : `${parsedNumber / 7.461}%`
-    }
-    
+    };
+
     const style = {
       marginTop: options.marginTop,
       marginBottom: options.marginBottom,
